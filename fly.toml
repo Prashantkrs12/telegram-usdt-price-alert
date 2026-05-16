@@ -1,0 +1,7 @@
+app = "pkparashar-price-alert-bot"
+primary_region = "bom"
+
+[build]
+
+[processes]
+app = "python telegram_price_bot.py"
