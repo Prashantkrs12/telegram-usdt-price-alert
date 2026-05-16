@@ -11,11 +11,11 @@ MARKET_PRICE_URL = "https://data-api.binance.vision/api/v3/ticker/price"
 TARGET_PRICE = 99.0
 TARGET_AMOUNT_INR = 80000.0
 MARKET_THRESHOLDS = {
-    "BTCUSDT": 75000.0,
-    "ETHUSDT": 2100.0,
-    "DOGEUSDT": 0.09946,
-    "SOLUSDT": 85.0,
-    "ADAUSDT": 0.25,
+    "BTCUSDT": 80000.0,
+    "ETHUSDT": 2300.0,
+    "DOGEUSDT": 0.12,
+    "SOLUSDT": 90.0,
+    "ADAUSDT": 0.27,
 }
 STATE_FILE = "alert_state.json"
 
