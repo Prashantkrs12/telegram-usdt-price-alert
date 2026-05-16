@@ -1,10 +1,20 @@
-# Telegram USDT Price Alert Bot
+# Telegram Price Alert Bot
 
-This bot sends a Telegram message when a visible Binance P2P USDT/INR offer:
+This bot sends Telegram messages for:
+
+## Binance P2P USDT/INR
 
 - costs `Rs 99.00` or less
 - supports `UPI`
 - allows a transaction up to `Rs 80,000`
+
+## Binance Futures
+
+- `BTCUSDT` below `75,000`
+- `ETHUSDT` below `2,100`
+- `DOGEUSDT` below `0.09946`
+- `SOLUSDT` below `85`
+- `ADAUSDT` below `0.25`
 
 ## Run it
 
@@ -36,5 +46,5 @@ python3 telegram_price_bot.py --once-send
 
 ## Free scheduled deployment
 
-GitHub Actions runs the bot every 10 minutes using
+GitHub Actions runs the bot every 5 minutes using
 `.github/workflows/check-price.yml`.
