@@ -7,7 +7,7 @@ from urllib import request, parse
 
 
 BINANCE_URL = "https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search"
-FUTURES_PRICE_URL = "https://fapi.binance.com/fapi/v1/ticker/price"
+MARKET_PRICE_URL = "https://data-api.binance.vision/api/v3/ticker/price"
 TARGET_PRICE = 99.0
 TARGET_AMOUNT_INR = 80000.0
 MARKET_THRESHOLDS = {
@@ -106,10 +106,10 @@ def format_alert(ad):
     )
 
 
-def fetch_futures_prices():
+def fetch_market_prices():
     prices = {}
     for symbol in MARKET_THRESHOLDS:
-        data = get_json(f"{FUTURES_PRICE_URL}?symbol={symbol}")
+        data = get_json(f"{MARKET_PRICE_URL}?symbol={symbol}")
         prices[symbol] = float(data["price"])
     return prices
 
@@ -160,7 +160,7 @@ def run_once(send_alert=False):
         if send_alert:
             telegram_call(token, "sendMessage", {"chat_id": chat_id, "text": alert})
 
-    prices = fetch_futures_prices()
+    prices = fetch_market_prices()
     alerts, next_state = market_alerts(prices, load_state())
     save_state(next_state)
     if alerts:

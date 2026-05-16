@@ -8,7 +8,7 @@ This bot sends Telegram messages for:
 - supports `UPI`
 - allows a transaction up to `Rs 80,000`
 
-## Binance Futures
+## Binance market prices
 
 - `BTCUSDT` below `75,000`
 - `ETHUSDT` below `2,100`
