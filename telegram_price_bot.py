@@ -118,6 +118,19 @@ def main():
         return run_once()
     if "--once-send" in sys.argv:
         return run_once(send_alert=True)
+    if "--test-send" in sys.argv:
+        token = os.environ.get("TELEGRAM_BOT_TOKEN")
+        chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+        if not token or not chat_id:
+            print("Set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID first.", file=sys.stderr)
+            return 1
+        telegram_call(
+            token,
+            "sendMessage",
+            {"chat_id": chat_id, "text": "Telegram test: your alert bot is working."},
+        )
+        print("Test message sent.")
+        return 0
 
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
