@@ -2,6 +2,6 @@
   "ADAUSDT": true,
   "BTCUSDT": false,
   "DOGEUSDT": false,
-  "ETHUSDT": false,
-  "SOLUSDT": false
+  "ETHUSDT": true,
+  "SOLUSDT": true
 }
