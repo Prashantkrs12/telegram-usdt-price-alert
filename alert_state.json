@@ -1,7 +1,7 @@
 {
   "ADAUSDT": true,
   "BTCUSDT": true,
-  "DOGEUSDT": true,
+  "DOGEUSDT": false,
   "ETHUSDT": true,
   "SOLUSDT": true
 }
